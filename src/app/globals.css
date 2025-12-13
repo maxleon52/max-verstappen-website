@@ -6,6 +6,7 @@
 }
 
 @theme inline {
+  --color-max-blue-900: #060913;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

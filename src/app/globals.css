@@ -27,3 +27,41 @@ body {
   color: var(--foreground);
   font-family: var(--font-the-globe), Arial, Helvetica, sans-serif;
 }
+
+.bg-video-hero {
+  /* position: relative; */
+
+  /* SOMBREAMENTO LATERAIS */
+  /* &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      101.47deg,
+      #0a0c10 26.38%,
+      rgba(10, 12, 16, 0.8) 50.07%,
+      #0a0c10 73.17%
+    );
+    pointer-events: none;
+  } */
+
+  /* SOMBREAMENTO SUPERIOR E INFERIOR */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      181deg,
+      #0a0c10 11.38%,
+      #0a0c10cc 28.07%,
+      #0a0c10 94.17%
+    );
+    pointer-events: none;
+  }
+}

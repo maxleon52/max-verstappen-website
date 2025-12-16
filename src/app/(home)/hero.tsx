@@ -13,10 +13,11 @@ export function Hero() {
       // if (videoHero.current) {
       //   videoHero.current.pause(); // Pausa no início
 
-      //   gsap.delayedCall(4, () => {
+      //   gsap.delayedCall(0, () => {
       //     videoHero.current?.play();
       //   });
       // }
+
       const tl = gsap.timeline({
         delay: 5,
       });
@@ -73,7 +74,7 @@ export function Hero() {
           }
         )
         .to(videoHero.current, {
-          opacity: 1,
+          // opacity: 1,
           ease: "Expo.easeInOut",
           onStart: () => {
             videoHero.current?.play();
@@ -85,7 +86,7 @@ export function Hero() {
                 display: "none",
                 // stagger: 0.5,
               });
-              gsap.to(".h1-main", {
+              gsap.to(".wrapper-mv-name, .wrapper-victorious", {
                 opacity: 1,
                 delay: 0.5,
               });
@@ -97,46 +98,48 @@ export function Hero() {
   );
 
   return (
-    <section ref={containerHero} className="min-h-svh bg-[#000000]">
+    <section ref={containerHero} className="min-h-svh">
       <div className="flex items-center justify-center relative h-screen">
-        <div className="md:w-6/12 w-full">
+        <div className="bg-video-hero -z-1 absolute flex items-center justify-center w-full h-full">
           <video
             ref={videoHero}
             // src="./mv-hero-edited-glitch.mp4"
-            src="./mv-hero-edited-2.mp4"
+            src="./video-hero-edited-with-transition.mp4"
             muted
-            className="hero-video h-full opacity-0 "
+            className="h-full w-full object-cover"
+            // className="h-full object-cover translate-x-112.5"
           ></video>
         </div>
 
-        <div className="md:w-7/12 2xl:-ml-40 lg:-ml-20 w-full px-4 md:max-w-6xl text-center font-black text-2xl md:text-5xl flex flex-col gap-4 md:relative md:bottom-0 absolute bottom-80">
-          <div className="h1-main opacity-0 flex flex-col md:items-start justify-center">
-            <h1 className="2xl:text-8xl md:text-6xl text-4xl leading-12">
-              Max Verstappen
-            </h1>
-            <span className="md:text-left text-2xl font-oswald">
-              4x world champion
-            </span>
+        <div className="flex flex-col md:items-start justify-center xl:mt-40">
+          <div className="wrapper-mv-name opacity-0 flex gap-4 xl:gap-8 xl:text-8xl md:text-6xl text-4xl leading-6 xl:leading-12">
+            <span>Max</span>
+            <span>Verstappen</span>
           </div>
+          <span className="wrapper-victorious opacity-0 md:text-left xl:text-2xl font-oswald">
+            4x world champion
+          </span>
 
-          <p
-            id="p1"
-            className="opacity-0 bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
-          >
-            I'M MAX VERSTAPPEN.
-          </p>
-          <p
-            id="p2"
-            className="opacity-0  bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
-          >
-            I'M THE BEST DRIVER.
-          </p>
-          <p
-            id="p3"
-            className="opacity-0  bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
-          >
-            BECAUSE I BELIEVE I'M THE BEST.
-          </p>
+          <div className="xl:text-7xl text-center text-4xl px-4">
+            <p
+              id="p1"
+              className="opacity-0 border bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
+            >
+              I'M MAX VERSTAPPEN.
+            </p>
+            <p
+              id="p2"
+              className="opacity-0  bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
+            >
+              I'M THE BEST DRIVER.
+            </p>
+            <p
+              id="p3"
+              className="opacity-0  bg-linear-to-r from-indigo-900 via-red-500 to-amber-400 bg-clip-text text-transparent"
+            >
+              BECAUSE I BELIEVE I'M THE BEST.
+            </p>
+          </div>
         </div>
       </div>
     </section>

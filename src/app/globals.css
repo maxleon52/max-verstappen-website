@@ -13,11 +13,17 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-oswald: var(--font-oswald);
+
+  --filter-border: drop-shadow(-3px -3px 0 white) drop-shadow(3px -3px 0 white)
+    drop-shadow(-3px 3px 0 white) drop-shadow(3px 3px 0 white)
+    drop-shadow(-3px 0 0 white) drop-shadow(3px 0 0 white)
+    drop-shadow(0 -3px 0 white) drop-shadow(0 3px 0 white);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000;
+    /* --background: #0a0a0a; */
     --foreground: #ededed;
   }
 }
@@ -57,10 +63,78 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    /* background: linear-gradient(
       181deg,
       #0a0c10 11.38%,
       #0a0c10cc 28.07%,
       #0a0c10 94.17%
+    ); */
+    pointer-events: none;
+  }
+}
+
+.wrapper-images {
+  position: relative;
+  /* SOMBREAMENTO SUPERIOR E INFERIOR */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.wrapper-image {
+  position: relative;
+
+  /* SOMBREAMENTO LATERAIS */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.5) 4%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.5) 96%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+  }
+  /* SOMBREAMENTO SUPERIOR E INFERIOR */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.2) 20%,
+      rgba(0, 0, 0, 0.2) 75%,
+      rgba(0, 0, 0, 1) 84%
     );
     pointer-events: none;
   }

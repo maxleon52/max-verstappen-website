@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { LoadingApp } from "./loading-app";
 
 const theGlobe = localFont({
   src: "./fonts/TheGlobePersonalUseBold-2ORlw.ttf",
@@ -38,9 +37,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${theGlobe.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
-        style={{ overflow: "hidden" }} // Desabilita o scroll inicialmente
+        // style={{ overflow: "hidden" }} // Desabilita o scroll inicialmente
       >
-        <LoadingApp />
+        {/* <LoadingApp /> */}
         {children}
       </body>
     </html>

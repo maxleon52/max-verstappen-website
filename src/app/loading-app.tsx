@@ -117,7 +117,7 @@ export function LoadingApp() {
   return isVisible ? (
     <div
       ref={containerLoadApp}
-      className="w-full h-screen z-10 absolute top-0 left-0 bg-max-blue-900 flex items-center justify-center"
+      className="w-full h-screen z-10 fixed top-0 left-0 bg-max-blue-900 flex items-center justify-center"
     >
       <svg
         width="137"
